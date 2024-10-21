@@ -50,6 +50,8 @@ const getInitialSenderPair = async (
       }
     } else {
       pair.messageCount = pair.messageCount + 1
+      pair.lastMessge = message
+      pair.lastOriginalMessge = originalMessage
       await pair.save()
     }
 
