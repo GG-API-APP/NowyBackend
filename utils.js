@@ -110,13 +110,36 @@ const sendMessage = async (receiverNumber, message, server, token) => {
   console.log(data)
 
   try {
-    const response = await axios.post(url, qs.stringify(data), {
+    await axios.post(url, qs.stringify(data), {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
         Token: token // Przekazanie tokena jako nagłówek
       }
     })
-    console.log('Response:', response.data)
+  } catch (error) {
+    console.error(
+      'Error:',
+      error.response ? error.response.data : error.message
+    )
+  }
+}
+
+const setStatus = async (status, description, server, token) => {
+  const url = `https://${server}/setStatus/${process.env.BOTGG_NUMBER}`
+
+  // Tworzenie obiektu z danymi
+  const data = {
+    status: status,
+    desc: description
+  }
+
+  try {
+    await axios.post(url, qs.stringify(data), {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Token: token
+      }
+    })
   } catch (error) {
     console.error(
       'Error:',
@@ -129,5 +152,6 @@ module.exports = {
   connectToDatabase,
   getInitialSenderPair,
   sendMessage,
-  getToken
+  getToken,
+  setStatus
 }

@@ -3,7 +3,8 @@ const {
   connectToDatabase,
   getInitialSenderPair,
   getToken,
-  sendMessage
+  sendMessage,
+  setStatus
 } = require('./utils')
 const cors = require('cors')
 const { Message, Pair } = require('./models')
@@ -19,14 +20,27 @@ const sendMessageWithToken = async (receiverNumber, message) => {
   await sendMessage(
     receiverNumber,
     message,
-    data.botmaster.server,
-    data.botmaster.token
+    data.botmaster.server[0],
+    data.botmaster.token[0]
+  )
+}
+
+const setStatusWithToken = async () => {
+  const data = await getToken()
+  setStatus(
+    process.env.BOTGG_STATUS,
+    process.env.BOTGG_DESCRIPTION,
+    data.botmaster.server[0],
+    data.botmaster.token[0]
   )
 }
 
 // Middleware
 app.use(cors())
 app.use([express.json(), express.text()])
+
+// Ustaw status
+setStatusWithToken()
 
 // Połącz z bazą danych
 connectToDatabase()
