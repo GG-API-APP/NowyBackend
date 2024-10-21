@@ -51,7 +51,7 @@ app.get(`/${process.env.BOTGG_ID}.html`, (req, res) => {
   res.sendFile(path.join(__dirname + `/assets/${process.env.BOTGG_ID}.html`))
 })
 
-app.post(`/${process.env.BOTGG_ID}.html`, async (req, res) => {
+app.post('/bot.php', async (req, res) => {
   res.status(200).json({ status: 'OK' })
   const initialSender = req.query.from // Parametr z URL
   const originalMessage = req.body
