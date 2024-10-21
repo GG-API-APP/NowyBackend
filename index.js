@@ -52,7 +52,7 @@ app.get(`/${process.env.BOTGG_ID}.html`, (req, res) => {
 })
 
 app.post('/', async (req, res) => {
-  res.status(200).json({ status: 'OK' })
+  res.send('')
   const initialSender = req.query.from // Parametr z URL
   const originalMessage = req.body
   const message = req.body
