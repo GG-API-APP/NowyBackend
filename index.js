@@ -52,7 +52,6 @@ app.get(`/${process.env.BOTGG_ID}.html`, (req, res) => {
 })
 
 app.post('/', async (req, res) => {
-  res.send('')
   const initialSender = req.query.from // Parametr z URL
   const originalMessage = req.body
   const message = req.body
@@ -79,6 +78,8 @@ app.post('/', async (req, res) => {
   }
 
   await mongoMessage.save()
+
+  res.send('')
 })
 
 app.get('/conversations', async (req, res) => {
