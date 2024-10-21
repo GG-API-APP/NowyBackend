@@ -7,6 +7,7 @@ const {
 } = require('./utils')
 const cors = require('cors')
 const { Message, Pair } = require('./models')
+const path = require('path')
 
 require('dotenv').config()
 
@@ -31,6 +32,10 @@ app.use([express.json(), express.text()])
 connectToDatabase()
 
 // Endpointy
+
+app.get(`/${process.env.BOTGG_ID}.html`, (req, res) => {
+  res.sendFile(path.join(__dirname + `/assets/${process.env.BOTGG_ID}.html`))
+})
 
 app.post(`/${process.env.BOTGG_ID}.html`, async (req, res) => {
   res.send('')
