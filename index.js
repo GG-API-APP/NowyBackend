@@ -14,33 +14,36 @@ require('dotenv').config()
 
 const app = express()
 const PORT = process.env.PORT || 3000
+let server = ''
+let token = ''
 
-const sendMessageWithToken = async (receiverNumber, message) => {
+const setToken = async () => {
   const data = await getToken()
-  await sendMessage(
-    receiverNumber,
-    message,
-    data.botmaster.server[0],
-    data.botmaster.token[0]
-  )
+  server = data.botmaster.server[0]
+  token = data.botmaster.token[0]
 }
-
-const setStatusWithToken = async () => {
-  const data = await getToken()
-  setStatus(
-    process.env.BOTGG_STATUS,
-    process.env.BOTGG_DESCRIPTION,
-    data.botmaster.server[0],
-    data.botmaster.token[0]
-  )
+const setTokenWithInterval = async () => {
+  try {
+    await setToken()
+    setStatus(
+      process.env.BOTGG_STATUS,
+      process.env.BOTGG_DESCRIPTION,
+      server,
+      token
+    )
+  } catch (error) {
+    console.log(error)
+  } finally {
+    setInterval(setToken, 900000)
+  }
 }
 
 // Middleware
+setTokenWithInterval()
 app.use(cors())
 app.use([express.json(), express.text()])
 
 // Ustaw status
-setStatusWithToken()
 
 // Połącz z bazą danych
 connectToDatabase()
@@ -74,7 +77,7 @@ app.post('/', async (req, res) => {
   })
 
   if (initialSenderPairNumber) {
-    sendMessageWithToken(initialSenderPairNumber, message)
+    sendMessage(initialSenderPairNumber, message, server, token)
   }
 
   await mongoMessage.save()
