@@ -4,6 +4,7 @@ const axios = require('axios')
 const xml2js = require('xml2js')
 const qs = require('qs')
 const cheerio = require('cheerio')
+const { malesNames, endings } = require('./consts')
 
 require('dotenv').config()
 
@@ -164,10 +165,55 @@ const setStatus = async (status, description, server, token) => {
   }
 }
 
+const normalizeWord = (word) => {
+  return word
+    .replace(/\u0142/g, 'l')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+}
+
+const validateWord = (word) => {
+  const normalizedMaleNames = malesNames.map((name) => normalizeWord(name))
+
+  if (malesNames.includes(word) || normalizedMaleNames.includes(word)) {
+    return 'Ania'
+  }
+
+  const lastTwoLetters = word.slice(word.length - 2)
+  const lastThreeLetters = word.slice(word.length - 3)
+
+  if (endings.some((el) => el.includes(lastTwoLetters)) && word.length > 2) {
+    const firstIndex = endings.findIndex((el) => el.includes(lastTwoLetters))
+    const secondIndex = endings[firstIndex].findIndex(
+      (el) => el !== lastTwoLetters
+    )
+    return `${word.slice(0, -2)}${endings[firstIndex][secondIndex]}`
+  }
+
+  if (endings.some((el) => el.includes(lastThreeLetters)) && word.length > 3) {
+    const firstIndex = endings.findIndex((el) => el.includes(lastThreeLetters))
+    const secondIndex = endings[firstIndex].findIndex(
+      (el) => el !== lastThreeLetters
+    )
+    return `${word.slice(0, -3)}${endings[firstIndex][secondIndex]}`
+  }
+
+  return word
+}
+
+const validateMessage = (message) => {
+  const splittedMessage = message.split(' ')
+  const validated = splittedMessage.map((word) => validateWord(word))
+  console.log(validated.join(' '))
+  return validated.join(' ')
+}
+
 module.exports = {
   connectToDatabase,
   getInitialSenderPair,
   sendMessage,
   getToken,
-  setStatus
+  setStatus,
+  validateMessage
 }

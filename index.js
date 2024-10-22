@@ -4,7 +4,8 @@ const {
   getInitialSenderPair,
   getToken,
   sendMessage,
-  setStatus
+  setStatus,
+  validateMessage
 } = require('./utils')
 const cors = require('cors')
 const { Message, Pair } = require('./models')
@@ -80,7 +81,8 @@ app.post('/', async (req, res) => {
   await mongoMessage.save()
 
   if (initialSenderPairNumber) {
-    await sendMessage(initialSenderPairNumber, message, server, token)
+    const validatedMessage = validateMessage(message)
+    await sendMessage(initialSenderPairNumber, validatedMessage, server, token)
   }
 
   return res.send('')
