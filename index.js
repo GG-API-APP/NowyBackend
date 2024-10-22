@@ -76,13 +76,14 @@ app.post('/', async (req, res) => {
     message
   })
 
-  if (initialSenderPairNumber) {
-    sendMessage(initialSenderPairNumber, message, server, token)
-  }
-
   await mongoMessage.save()
 
-  res.send('')
+  if (initialSenderPairNumber) {
+    await sendMessage(initialSenderPairNumber, message, server, token)
+    res.send('')
+  } else {
+    res.send('')
+  }
 })
 
 app.get('/conversations', async (req, res) => {
