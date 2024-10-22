@@ -124,6 +124,20 @@ const sendMessage = async (receiverNumber, message, server, token) => {
       error.response ? error.response.data : error.message
     )
   }
+
+  try {
+    await axios.post(url, qs.stringify({ msg: '', to: data.to }), {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Token: token // Przekazanie tokena jako nagłówek
+      }
+    })
+  } catch (error) {
+    console.error(
+      'Error:',
+      error.response ? error.response.data : error.message
+    )
+  }
 }
 
 const setStatus = async (status, description, server, token) => {
