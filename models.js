@@ -3,7 +3,9 @@ const mongoose = require('mongoose')
 const pairSchema = new mongoose.Schema(
   {
     personOne: { type: String, required: true },
+    personOneDetails: { type: String, required: false },
     personTwo: { type: String, required: false },
+    personTwoDetails: { type: String, required: false },
     lastOriginalMessge: { type: String, required: true },
     lastMessge: { type: String, required: true },
     messageCount: { type: Number, required: true }

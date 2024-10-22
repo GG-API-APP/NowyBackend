@@ -3,6 +3,7 @@ const { Pair } = require('./models')
 const axios = require('axios')
 const xml2js = require('xml2js')
 const qs = require('qs')
+const cheerio = require('cheerio')
 
 require('dotenv').config()
 
@@ -32,8 +33,19 @@ const getInitialSenderPair = async (
     const waitingPair = await Pair.findOne({ personTwo: undefined })
 
     if (!pair) {
+      const initialSenderDetails = await axios.get(
+        `https://katalog.gg-czaty.pl/?page=profile&uin=${initialSender}`
+      )
+      const html = initialSenderDetails.data
+      const $ = cheerio.load(html)
+
+      const name = $('h4').first().text().trim() || undefined
+      const description = $('p.flow-text').text().trim() || undefined
+
       if (waitingPair) {
         waitingPair.personTwo = initialSender
+        waitingPair.personTwoName = name
+        waitingPair.personTwoDescription = description
         waitingPair.lastOriginalMessge = originalMessage
         waitingPair.lastMessge = message
         waitingPair.messageCount = 2
@@ -41,7 +53,11 @@ const getInitialSenderPair = async (
       } else {
         pair = new Pair({
           personOne: initialSender,
+          personOneName: name,
+          personOneDescription: description,
           personTwo: undefined,
+          personTwoName: undefined,
+          personTwoDescription: undefined,
           lastOriginalMessge: originalMessage,
           lastMessge: message,
           messageCount: 1
