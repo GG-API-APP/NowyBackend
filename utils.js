@@ -111,10 +111,11 @@ const sendMessage = async (receiverNumber, message, server, token) => {
 
   console.log(data, receiverNumber, message, server, token)
 
-  const dupa = await axios('https://jsonplaceholder.typicode.com/posts', {
-    title: 'foo',
-    body: 'bar',
-    userId: 1
+  const dupa = await axios.post(url, data, {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Token: token
+    }
   })
 
   console.log(!!dupa)
