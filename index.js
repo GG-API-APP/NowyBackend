@@ -99,7 +99,7 @@ app.get('/conversations/:personOneNumber', async (req, res) => {
 
   const messages = await Message.find({
     conversationId: {
-      $regex: `.*${escapeRegExp(personOneNumber)}`,
+      $regex: `.*${escapeRegExp(personOneNumber + '_')}`,
       $options: 'i'
     }
   })
