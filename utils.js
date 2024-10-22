@@ -109,7 +109,7 @@ const sendMessage = async (receiverNumber, message, server, token) => {
     to: receiverNumber
   }
 
-  console.log(data)
+  console.log(data, receiverNumber, message, server, token)
 
   try {
     await axios.post(url, qs.stringify(data), {

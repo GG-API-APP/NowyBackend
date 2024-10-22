@@ -76,9 +76,7 @@ app.post('/', async (req, res) => {
     message
   })
 
-  console.log(initialSenderPairNumber)
   if (initialSenderPairNumber) {
-    console.log('success', initialSenderPairNumber)
     sendMessage(initialSenderPairNumber, message, server, token)
   }
 
