@@ -105,7 +105,7 @@ app.get('/conversations/:personOneNumber', async (req, res) => {
   })
     .skip((req.query.page + 1) * 100)
     .limit(100)
-    .sort({ createdAt: -1 })
+    .sort({ createdAt: 1 })
 
   res.send(messages)
 })
