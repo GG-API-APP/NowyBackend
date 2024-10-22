@@ -118,7 +118,7 @@ const sendMessage = async (receiverNumber, message, server, token) => {
     }
   })
 
-  console.log(!!dupa)
+  console.log(dupa)
 
   // try {
   //   await axios.post(url, qs.stringify(data), {
