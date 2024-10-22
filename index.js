@@ -9,6 +9,7 @@ const {
 const cors = require('cors')
 const { Message, Pair } = require('./models')
 const path = require('path')
+const { escapeRegExp } = require('lodash')
 
 require('dotenv').config()
 
@@ -91,6 +92,22 @@ app.get('/conversations', async (req, res) => {
     .limit(10)
     .sort({ updatedAt: -1 })
   res.send(lastConversationData)
+})
+
+app.get('/conversations/:personOneNumber', async (req, res) => {
+  const personOneNumber = req.params.personOneNumber
+
+  const messages = await Message.find({
+    conversationId: {
+      $regex: `.*${escapeRegExp(personOneNumber)}`,
+      $options: 'i'
+    }
+  })
+    .skip((req.query.page + 1) * 100)
+    .limit(100)
+    .sort({ createdAt: -1 })
+
+  res.send(messages)
 })
 
 // Uruchomienie serwera
