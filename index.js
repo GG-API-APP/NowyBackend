@@ -86,7 +86,6 @@ app.post('/', async (req, res) => {
 })
 
 app.get('/conversations', async (req, res) => {
-  console.log(req.query.page)
   const lastConversationData = await Pair.find()
     .skip((req.query.page + 1) * 10)
     .limit(10)
