@@ -80,10 +80,9 @@ app.post('/', async (req, res) => {
 
   if (initialSenderPairNumber) {
     await sendMessage(initialSenderPairNumber, message, server, token)
-    res.send('')
-  } else {
-    res.send('')
   }
+
+  return res.send('')
 })
 
 app.get('/conversations', async (req, res) => {
