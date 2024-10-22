@@ -111,33 +111,41 @@ const sendMessage = async (receiverNumber, message, server, token) => {
 
   console.log(data, receiverNumber, message, server, token)
 
-  try {
-    await axios.post(url, qs.stringify(data), {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        Token: token // Przekazanie tokena jako nagłówek
-      }
-    })
-  } catch (error) {
-    console.error(
-      'Error:',
-      error.response ? error.response.data : error.message
-    )
-  }
+  const dupa = await axios('https://jsonplaceholder.typicode.com/posts', {
+    title: 'foo',
+    body: 'bar',
+    userId: 1
+  })
 
-  try {
-    await axios.post(url, qs.stringify({ msg: '', to: data.to }), {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        Token: token // Przekazanie tokena jako nagłówek
-      }
-    })
-  } catch (error) {
-    console.error(
-      'Error:',
-      error.response ? error.response.data : error.message
-    )
-  }
+  console.log(!!dupa)
+
+  // try {
+  //   await axios.post(url, qs.stringify(data), {
+  //     headers: {
+  //       'Content-Type': 'application/x-www-form-urlencoded',
+  //       Token: token // Przekazanie tokena jako nagłówek
+  //     }
+  //   })
+  // } catch (error) {
+  //   console.error(
+  //     'Error:',
+  //     error.response ? error.response.data : error.message
+  //   )
+  // }
+
+  // try {
+  //   await axios.post(url, qs.stringify({ msg: '', to: data.to }), {
+  //     headers: {
+  //       'Content-Type': 'application/x-www-form-urlencoded',
+  //       Token: token // Przekazanie tokena jako nagłówek
+  //     }
+  //   })
+  // } catch (error) {
+  //   console.error(
+  //     'Error:',
+  //     error.response ? error.response.data : error.message
+  //   )
+  // }
 }
 
 const setStatus = async (status, description, server, token) => {
