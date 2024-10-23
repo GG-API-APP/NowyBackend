@@ -10,7 +10,8 @@ const {
   wordToChangeRz,
   wordToChangePrz,
   wordToChangeCz,
-  wordToChangeOthers
+  wordToChangeOthers,
+  uploadedPhotos
 } = require('./consts')
 
 require('dotenv').config()
@@ -39,8 +40,6 @@ const getInitialSenderPair = async (
     })
 
     const waitingPair = await Pair.findOne({ personTwo: 'unknown' })
-
-    console.log(waitingPair)
 
     if (!pair) {
       const initialSenderDetails = await axios.get(
@@ -263,7 +262,7 @@ const validateMessage = (message) => {
   const splittedMessage = message.split(' ')
 
   const validated = splittedMessage.map((word) => {
-    const wordWithSplittedSpecialCharacters = word.split(/(?=[?:;!])/)
+    const wordWithSplittedSpecialCharacters = word.split(/(?=[?;!])/)
     const specialCharacters = wordWithSplittedSpecialCharacters.filter(
       (w) => w !== wordWithSplittedSpecialCharacters[0]
     )
