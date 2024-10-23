@@ -91,8 +91,8 @@ app.post('/', async (req, res) => {
 
 app.get('/conversations', async (req, res) => {
   const lastConversationData = await Pair.find()
-    .skip((req.query.page + 1) * 10)
-    .limit(10)
+    // .skip((req.query.page + 1) * 10)
+    // .limit(10)
     .sort({ updatedAt: -1 })
   res.send(lastConversationData)
 })
@@ -106,8 +106,8 @@ app.get('/conversations/:personOneNumber', async (req, res) => {
       $options: 'i'
     }
   })
-    .skip((req.query.page + 1) * 100)
-    .limit(100)
+    // .skip((req.query.page + 1) * 100)
+    // .limit(100)
     .sort({ createdAt: 1 })
 
   res.send(messages)
