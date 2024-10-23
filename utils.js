@@ -261,8 +261,7 @@ const validateMessage = (message) => {
   const splittedMessage = message.split(' ')
 
   const validated = splittedMessage.map((word) => {
-    const wordValidated = word.replace(/[^a-zA-Z0-9żźćńółęąś!?\s]/g, '')
-    const wordWithSplittedSpecialCharacters = wordValidated.split(/(?=[?:;!])/)
+    const wordWithSplittedSpecialCharacters = word.split(/(?=[?:;!])/)
     const specialCharacters = wordWithSplittedSpecialCharacters.filter(
       (w) => w !== wordWithSplittedSpecialCharacters[0]
     )
