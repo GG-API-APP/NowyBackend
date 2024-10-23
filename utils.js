@@ -38,7 +38,9 @@ const getInitialSenderPair = async (
       $or: [{ personOne: initialSender }, { personTwo: initialSender }]
     })
 
-    const waitingPair = await Pair.findOne({ personTwo: undefined })
+    const waitingPair = await Pair.findOne({ personTwo: 'unknown' })
+
+    console.log(waitingPair)
 
     if (!pair) {
       const initialSenderDetails = await axios.get(
@@ -63,7 +65,7 @@ const getInitialSenderPair = async (
           personOne: initialSender,
           personOneName: name,
           personOneDescription: description,
-          personTwo: undefined,
+          personTwo: 'unknown',
           personTwoName: undefined,
           personTwoDescription: undefined,
           lastOriginalMessge: originalMessage,
