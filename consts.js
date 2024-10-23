@@ -606,6 +606,7 @@ const wordToChangeRz = [
   ['gejuchu', 'lesbijce'],
   ['gejuchu', 'lesbijko'],
   ['gej', 'lesba'],
+  ['gejem', 'lesbą'],
   ['geja', 'lesby'],
   ['gejowi', 'lesbie'],
   ['geja', 'lesbę'],
