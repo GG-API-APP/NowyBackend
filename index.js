@@ -61,8 +61,6 @@ app.post('/', async (req, res) => {
   const originalMessage = req.body
   const message = validateMessage(originalMessage)
 
-  console.log(message)
-
   const initialSenderPairNumber = await getInitialSenderPair(
     initialSender,
     originalMessage,
