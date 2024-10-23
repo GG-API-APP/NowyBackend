@@ -189,7 +189,7 @@ const validateWord = (word) => {
     return uploadedPhotos[randomIndex]
   }
 
-  if (videoUrlPattern.test(message)) {
+  if (videoUrlPattern.test(word)) {
     return 'Nasz system podejrzewa, że nieznajomy chce Ci przesłać niecenzuralne zdjęcie. Jeżeli godzisz się na otrzymywanie takich treści, to dodaj go do listy swoich kontaktów i poproś o ponowne przesłanie tego pliku.'
   }
 
