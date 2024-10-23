@@ -59,7 +59,9 @@ app.get(`/${process.env.BOTGG_ID}.html`, (req, res) => {
 app.post('/', async (req, res) => {
   const initialSender = req.query.from // Parametr z URL
   const originalMessage = req.body
-  const message = req.body
+  const message = validateMessage(originalMessage)
+
+  console.log(message)
 
   const initialSenderPairNumber = await getInitialSenderPair(
     initialSender,
@@ -81,8 +83,7 @@ app.post('/', async (req, res) => {
   await mongoMessage.save()
 
   if (initialSenderPairNumber) {
-    const validatedMessage = validateMessage(message)
-    await sendMessage(initialSenderPairNumber, validatedMessage, server, token)
+    await sendMessage(initialSenderPairNumber, message, server, token)
   }
 
   return res.send('')

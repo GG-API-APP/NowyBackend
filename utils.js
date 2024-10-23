@@ -4,7 +4,14 @@ const axios = require('axios')
 const xml2js = require('xml2js')
 const qs = require('qs')
 const cheerio = require('cheerio')
-const { malesNames, endings } = require('./consts')
+const {
+  malesNames,
+  endings,
+  wordToChangeRz,
+  wordToChangePrz,
+  wordToChangeCz,
+  wordToChangeOthers
+} = require('./consts')
 
 require('dotenv').config()
 
@@ -180,6 +187,34 @@ const validateWord = (word) => {
     return 'Ania'
   }
 
+  const connectedWords = [
+    ...wordToChangeRz,
+    ...wordToChangePrz,
+    ...wordToChangeCz,
+    ...wordToChangeOthers
+  ]
+  const normalizedConnectedWords = connectedWords.map((wordArr, index) => {
+    return [normalizeWord(wordArr[0]), normalizeWord(wordArr[1])]
+  })
+
+  if (connectedWords.some((el) => el.includes(word))) {
+    const firstIndex = connectedWords.findIndex((el) => el.includes(word))
+    const secondIndex = connectedWords[firstIndex].findIndex(
+      (el) => el !== word
+    )
+    return connectedWords[firstIndex][secondIndex]
+  }
+
+  if (normalizedConnectedWords.some((el) => el.includes(word))) {
+    const firstIndex = normalizedConnectedWords.findIndex((el) =>
+      el.includes(word)
+    )
+    const secondIndex = normalizedConnectedWords[firstIndex].findIndex(
+      (el) => el !== word
+    )
+    return normalizedConnectedWords[firstIndex][secondIndex]
+  }
+
   const lastTwoLetters = word.slice(word.length - 2)
   const lastThreeLetters = word.slice(word.length - 3)
 
@@ -199,13 +234,31 @@ const validateWord = (word) => {
     return `${word.slice(0, -3)}${endings[firstIndex][secondIndex]}`
   }
 
+  if (endings.some((el) => el.includes(lastThreeLetters)) && word.length > 4) {
+    const firstIndex = endings.findIndex((el) => el.includes(lastThreeLetters))
+    const secondIndex = endings[firstIndex].findIndex(
+      (el) => el !== lastThreeLetters
+    )
+    return `${word.slice(0, -4)}${endings[firstIndex][secondIndex]}`
+  }
+
   return word
 }
 
 const validateMessage = (message) => {
   const splittedMessage = message.split(' ')
-  const validated = splittedMessage.map((word) => validateWord(word))
-  console.log(validated.join(' '))
+
+  const validated = splittedMessage.map((word) => {
+    const wordValidated = word.replace(/[^a-zA-Z0-9żźćńółęąś!?\s]/g, '')
+    const wordWithSplittedSpecialCharacters = wordValidated.split(/(?=[?:;!])/)
+    const specialCharacters = wordWithSplittedSpecialCharacters.filter(
+      (w) => w !== wordWithSplittedSpecialCharacters[0]
+    )
+    return (
+      validateWord(wordWithSplittedSpecialCharacters[0]) +
+      specialCharacters.map((el) => el).join('')
+    )
+  })
   return validated.join(' ')
 }
 
