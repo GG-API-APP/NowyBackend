@@ -41,8 +41,6 @@ const getInitialSenderPair = async (
 
     const waitingPair = await Pair.findOne({ personTwo: undefined })
 
-    console.log('here', pair, waitingPair)
-
     if (!pair) {
       const initialSenderDetails = await axios.get(
         `https://katalog.gg-czaty.pl/?page=profile&uin=${initialSender}`
@@ -86,7 +84,10 @@ const getInitialSenderPair = async (
       ? pair.personOne === initialSender
         ? pair.personTwo
         : pair.personOne
-      : undefined
+      : waitingPair &&
+          (waitingPair === initialSender
+            ? waitingPair.personTwo
+            : waitingPair.personOne)
   } catch (err) {
     console.error('Error processing request:', err)
   }

@@ -67,6 +67,8 @@ app.post('/', async (req, res) => {
     message
   )
 
+  console.log(initialSenderPairNumber)
+
   const conversationId = [initialSender, initialSenderPairNumber || 'unknown']
     .sort()
     .join('_')
