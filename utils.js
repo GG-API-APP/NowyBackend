@@ -57,7 +57,7 @@ const getInitialSenderPair = async (
         waitingPair.personTwoDescription = description
         waitingPair.lastOriginalMessge = originalMessage
         waitingPair.lastMessge = message
-        waitingPair.messageCount = 2
+        waitingPair.messageCount = pair.messageCount + 1
         await waitingPair.save() // Zapisz zmiany
       } else {
         pair = new Pair({
