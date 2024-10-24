@@ -225,7 +225,9 @@ const endings = [
   ['szy', 'sza'],
   ['ał', 'ała'],
   ['al', 'ala'],
-  ['łbym', 'łabym']
+  ['łbym', 'łabym'],
+  ['czny', 'czna'],
+  ['cznego', 'czną']
 ]
 
 const wordToChangeRz = [
@@ -267,6 +269,7 @@ const wordToChangeRz = [
   ['laską', 'facetem'],
   ['lasce', 'facecie'],
   ['lasko', 'faciecie'],
+  ['laski', 'facetów'],
   ['cipka', 'kutasek'],
   ['cipkę', 'kutaska'],
   ['cipki', 'kutaska'],
@@ -359,6 +362,7 @@ const wordToChangeRz = [
   ['singlu', 'singielce'],
   ['singlu', 'singielko'],
   ['mężczyzna', 'kobieta'],
+  ['mężczyzn', 'kobiety'],
   ['mężczyzny', 'kobiety'],
   ['mężczyźnie', 'kobiecie'],
   ['mężczyznę', 'kobietę'],
@@ -634,6 +638,12 @@ const wordToChangeRz = [
 ]
 
 wordToChangePrz = [
+  ['ciekawy', 'ciekawa'],
+  ['ciekawego', 'ciekawą'],
+  ['niegrzeczny', 'niegrzeczna'],
+  ['niegrzecznego', 'niegrzeczną'],
+  ['przyjaciel', 'przyjaciółka'],
+  ['przyjaciela', 'przyjaciółkę'],
   ['żonaty', 'zamężna'],
   ['żonatego', 'zamężnej'],
   ['żonatemu', 'zamężnej'],
