@@ -258,6 +258,22 @@ const validateWord = (word) => {
     return `${word.slice(0, -4)}${endings[firstIndex][secondIndex]}`
   }
 
+  if (endings.some((el) => el.includes(lastThreeLetters)) && word.length > 5) {
+    const firstIndex = endings.findIndex((el) => el.includes(lastThreeLetters))
+    const secondIndex = endings[firstIndex].findIndex(
+      (el) => el !== lastThreeLetters
+    )
+    return `${word.slice(0, -5)}${endings[firstIndex][secondIndex]}`
+  }
+
+  if (endings.some((el) => el.includes(lastThreeLetters)) && word.length > 6) {
+    const firstIndex = endings.findIndex((el) => el.includes(lastThreeLetters))
+    const secondIndex = endings[firstIndex].findIndex(
+      (el) => el !== lastThreeLetters
+    )
+    return `${word.slice(0, -6)}${endings[firstIndex][secondIndex]}`
+  }
+
   return word
 }
 

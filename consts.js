@@ -231,6 +231,10 @@ const endings = [
 ]
 
 const wordToChangeRz = [
+  ['bi', 'homo'],
+  ['biseks', 'homoś'],
+  ['była', 'były'],
+  ['byłą', 'byłym'],
   ['mój', 'moja'],
   ['pani', 'panu'],
   ['głupi', 'głupia'],
@@ -257,6 +261,8 @@ const wordToChangeRz = [
   ['pierś', 'jądro'],
   ['pierś', 'jądro'],
   ['kutas', 'cipa'],
+  ['kutasa', 'cipe'],
+  ['kutasa', 'cipę'],
   ['kutasa', 'cipy'],
   ['kutasowi', 'cipie'],
   ['kutasem', 'cipą'],
@@ -538,6 +544,7 @@ const wordToChangeRz = [
   ['koleżanka', 'kolega'],
   ['koleżanki', 'kolegi'],
   ['koleżance', 'koledze'],
+  ['koleżanko', 'kolego'],
   ['koledze', 'kolega'],
   ['ania', 'koleżka'],
   ['anią', 'koleżką'],
@@ -877,7 +884,8 @@ const wordToChangeOthers = [
   ['mój', 'moja'],
   ['mojego', 'moją'],
   ['zajść', 'zostać'],
-  ['zajdziesz', 'zostaniesz']
+  ['zajdziesz', 'zostaniesz'],
+  ['tą', 'tym']
 ]
 
 const uploadedPhotos = [
