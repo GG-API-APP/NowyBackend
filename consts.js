@@ -231,6 +231,8 @@ const endings = [
 ]
 
 const wordToChangeRz = [
+  ['ukrainka', 'polak'],
+  ['ukrainką', 'polakiem'],
   ['bi', 'homo'],
   ['biseks', 'homoś'],
   ['była', 'były'],
@@ -270,6 +272,7 @@ const wordToChangeRz = [
   ['kutasie', 'cipo'],
   ['laska', 'facet'],
   ['laski', 'faceta'],
+  ['laski', 'faceci'],
   ['lasce', 'facetowi'],
   ['laskę', 'faceta'],
   ['laską', 'facetem'],
