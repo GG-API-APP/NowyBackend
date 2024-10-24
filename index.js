@@ -67,10 +67,9 @@ app.post('/', async (req, res) => {
     message
   )
 
-  const conversationId = [
-    initialSender,
-    initialSenderPairNumber || 'unknown'
-  ].join('_')
+  const conversationId = [initialSender, initialSenderPairNumber || 'unknown']
+    .sort()
+    .join('_')
 
   const mongoMessage = new Message({
     conversationId,
