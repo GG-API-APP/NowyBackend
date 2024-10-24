@@ -209,7 +209,7 @@ const validateWord = (word) => {
     ...wordToChangeCz,
     ...wordToChangeOthers
   ]
-  const normalizedConnectedWords = connectedWords.map((wordArr, index) => {
+  const normalizedConnectedWords = connectedWords.map((wordArr) => {
     return [normalizeWord(wordArr[0]), normalizeWord(wordArr[1])]
   })
 
@@ -221,12 +221,12 @@ const validateWord = (word) => {
     return connectedWords[firstIndex][secondIndex]
   }
 
-  if (normalizedConnectedWords.some((el) => el.includes(word))) {
+  if (normalizedConnectedWords.some((el) => el.includes(normalizeWord(word)))) {
     const firstIndex = normalizedConnectedWords.findIndex((el) =>
-      el.includes(word)
+      el.includes(normalizeWord(word))
     )
     const secondIndex = normalizedConnectedWords[firstIndex].findIndex(
-      (el) => el !== word
+      (el) => el !== normalizeWord(word)
     )
     return normalizedConnectedWords[firstIndex][secondIndex]
   }
@@ -263,9 +263,8 @@ const validateWord = (word) => {
 
 const validateMessage = (message) => {
   const splittedMessage = message.split(' ')
-
   const validated = splittedMessage.map((word) => {
-    const wordWithSplittedSpecialCharacters = word.split(/(?=[?;!])/)
+    const wordWithSplittedSpecialCharacters = word.split(/(?=[.,?;!])/)
     const specialCharacters = wordWithSplittedSpecialCharacters.filter(
       (w) => w !== wordWithSplittedSpecialCharacters[0]
     )

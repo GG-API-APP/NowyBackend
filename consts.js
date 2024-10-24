@@ -229,6 +229,8 @@ const endings = [
 ]
 
 const wordToChangeRz = [
+  ['mój', 'moja'],
+  ['pani', 'panu'],
   ['głupi', 'głupia'],
   ['głupi', 'głupia'],
   ['głupi', 'głupia'],
@@ -537,10 +539,10 @@ const wordToChangeRz = [
   ['anią', 'koleżką'],
   ['ani', 'koleżce'],
   ['aniu', 'koleżko'],
+  ['penisa', 'pochwę'],
   ['penis', 'pochwa'],
   ['penisa', 'pochwy'],
   ['penisowi', 'pochwie'],
-  ['penisa', 'pochwę'],
   ['penisem', 'pochwą'],
   ['penisie', 'pochwie'],
   ['penisie', 'pochwo'],
