@@ -229,13 +229,15 @@ const endings = [
 ]
 
 const wordToChangeRz = [
+  ['głupi', 'głupia'],
+  ['głupi', 'głupia'],
+  ['głupi', 'głupia'],
+  ['głupi', 'głupia'],
+  ['głupi', 'głupia'],
   ['ciąża', 'płodność'],
-  ['ciąży', 'płodności'],
   ['ciąży', 'płodności'],
   ['ciążę', 'płodność'],
   ['ciąża', 'płodnością'],
-  ['ciąży', 'płodności'],
-  ['ciąży', 'płodności'],
   ['jajco', 'cycek'],
   ['jajca', 'cycki'],
   ['jajcu', 'cyckowi'],
