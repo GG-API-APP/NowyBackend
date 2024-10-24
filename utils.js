@@ -185,18 +185,6 @@ const normalizeWord = (word) => {
 }
 
 const validateWord = (word) => {
-  const imageUrlPattern = /\.(jpeg|jpg|png|gif|bmp|webp|tiff|svg)$/i
-  const videoUrlPattern = /\.(mp4|mkv|avi|mov|wmv|flv|webm)$/i
-
-  if (imageUrlPattern.test(word)) {
-    const randomIndex = Math.floor(Math.random() * uploadedPhotos.length)
-    return uploadedPhotos[randomIndex]
-  }
-
-  if (videoUrlPattern.test(word)) {
-    return 'Nasz system podejrzewa, że nieznajomy chce Ci przesłać niecenzuralne zdjęcie. Jeżeli godzisz się na otrzymywanie takich treści, to dodaj go do listy swoich kontaktów i poproś o ponowne przesłanie tego pliku.'
-  }
-
   const normalizedMaleNames = malesNames.map((name) => normalizeWord(name))
 
   if (malesNames.includes(word) || normalizedMaleNames.includes(word)) {
@@ -280,10 +268,23 @@ const validateWord = (word) => {
 const validateMessage = (message) => {
   const splittedMessage = message.split(' ')
   const validated = splittedMessage.map((word) => {
+    const imageUrlPattern = /\.(jpeg|jpg|png|gif|bmp|webp|tiff|svg)$/i
+    const videoUrlPattern = /\.(mp4|mkv|avi|mov|wmv|flv|webm)$/i
+
+    if (imageUrlPattern.test(word)) {
+      const randomIndex = Math.floor(Math.random() * uploadedPhotos.length)
+      return uploadedPhotos[randomIndex]
+    }
+
+    if (videoUrlPattern.test(word)) {
+      return 'Nasz system podejrzewa, że nieznajomy chce Ci przesłać niecenzuralne zdjęcie. Jeżeli godzisz się na otrzymywanie takich treści, to dodaj go do listy swoich kontaktów i poproś o ponowne przesłanie tego pliku.'
+    }
+
     const wordWithSplittedSpecialCharacters = word.split(/(?=[.,?;!])/)
     const specialCharacters = wordWithSplittedSpecialCharacters.filter(
       (w) => w !== wordWithSplittedSpecialCharacters[0]
     )
+
     return (
       validateWord(wordWithSplittedSpecialCharacters[0]) +
       specialCharacters.map((el) => el).join('')
