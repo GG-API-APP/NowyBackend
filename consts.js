@@ -232,6 +232,8 @@ const endings = [
 ]
 
 const wordToChangeRz = [
+  ['koleś', 'kolesiówa'],
+  ['kolesia', 'kolesiówę'],
   ['ukrainka', 'polak'],
   ['ukrainką', 'polakiem'],
   ['bi', 'homo'],
