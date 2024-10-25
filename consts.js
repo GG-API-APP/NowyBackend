@@ -227,7 +227,8 @@ const endings = [
   ['al', 'ala'],
   ['łbym', 'łabym'],
   ['czny', 'czna'],
-  ['cznego', 'czną']
+  ['cznego', 'czną'],
+  ['any', 'ana']
 ]
 
 const wordToChangeRz = [
@@ -647,7 +648,7 @@ const wordToChangeRz = [
   ['brodo', 'włosy']
 ]
 
-wordToChangePrz = [
+const wordToChangePrz = [
   ['ciekawy', 'ciekawa'],
   ['ciekawego', 'ciekawą'],
   ['niegrzeczny', 'niegrzeczna'],
