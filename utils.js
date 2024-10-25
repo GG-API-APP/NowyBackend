@@ -187,7 +187,10 @@ const normalizeWord = (word) => {
 const validateWord = (word) => {
   const normalizedMaleNames = malesNames.map((name) => normalizeWord(name))
 
-  if (malesNames.includes(word) || normalizedMaleNames.includes(word)) {
+  if (
+    malesNames.includes(word) ||
+    normalizedMaleNames.includes(normalizeWord(word))
+  ) {
     return 'Ania'
   }
 
