@@ -882,8 +882,13 @@ const wordToChangeCz = [
 ]
 
 const wordToChangeOthers = [
-  ['ją', 'jego'],
-  ['ja', 'go'],
+  ['anno', 'koleszko'],
+  ['sama', 'sam'],
+  ['droga', 'drogi'],
+  ['bokserek', 'stringów'],
+  ['slipów', 'fig'],
+  ['gość', 'gościówa'],
+  ['gościem', 'gościówą'],
   ['mój', 'moja'],
   ['mojego', 'moją'],
   ['zajść', 'zostać'],
