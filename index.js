@@ -59,7 +59,8 @@ app.get(`/${process.env.BOTGG_ID}.html`, (req, res) => {
 app.post('/', async (req, res) => {
   const initialSender = req.query.from // Parametr z URL
   const originalMessage = req.body
-  const message = validateMessage(originalMessage)
+  // const message = validateMessage(originalMessage)
+  const message = replaceOnce(message.toLowerCase(), find, replace)
 
   const initialSenderPairNumber = await getInitialSenderPair(
     initialSender,
