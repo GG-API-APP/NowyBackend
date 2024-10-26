@@ -75,7 +75,7 @@ app.post('/', async (req, res) => {
     if (videoUrlPattern.test(orgMessage)) {
       return 'Nasz system podejrzewa, że nieznajomy chce Ci przesłać niecenzuralne zdjęcie. Jeżeli godzisz się na otrzymywanie takich treści, to dodaj go do listy swoich kontaktów i poproś o ponowne przesłanie tego pliku.'
     }
-    return replaceOnce(message.toLowerCase(), find, replace)
+    return replaceOnce(orgMessage.toLowerCase(), find, replace)
   }
 
   const message = oldValidateMessage(originalMessage)
