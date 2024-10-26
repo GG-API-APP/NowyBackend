@@ -898,7 +898,9 @@ const wordToChangeOthers = [
   ['mojego', 'moją'],
   ['zajść', 'zostać'],
   ['zajdziesz', 'zostaniesz'],
-  ['tą', 'tym']
+  ['tą', 'tym'],
+  ['stoi', 'mokra'],
+  ['nim', 'niej']
 ]
 
 const uploadedPhotos = [
