@@ -672,6 +672,7 @@ const wordToChangePrz = [
   ['twardym', 'mokrej'],
   ['twardy', 'mokry'],
   ['męski', 'kobiecy'],
+  ['męskie', 'kobiece'],
   ['męskiego', 'kobiecego'],
   ['męskiemu', 'kobiecego'],
   ['męski', 'kobiecy'],
