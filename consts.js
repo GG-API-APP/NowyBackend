@@ -926,7 +926,7 @@ const uploadedPhotos = [
   'https://www.gg.pl/dysk/XNUjt10Ycw9cXdUjt10QjYE/20241224_173410.jpg'
 ]
 
-export const find = [
+const find = [
   'ył',
   'yl',
   'yła',
@@ -1457,7 +1457,7 @@ export const find = [
   'zwilgotnieje'
 ]
 
-export const replace = [
+const replace = [
   'yła',
   'yla',
   'ył',
