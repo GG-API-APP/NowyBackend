@@ -4,8 +4,7 @@ const {
   getInitialSenderPair,
   getToken,
   sendMessage,
-  setStatus,
-  validateMessage
+  setStatus
 } = require('./utils')
 const cors = require('cors')
 const { Message, Pair } = require('./models')
