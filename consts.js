@@ -658,6 +658,8 @@ const wordToChangeRz = [
 ]
 
 const wordToChangePrz = [
+  ['taki', 'taka'],
+  ['takiej', 'takiego'],
   ['ciekawy', 'ciekawa'],
   ['ciekawego', 'ciekawą'],
   ['niegrzeczny', 'niegrzeczna'],
