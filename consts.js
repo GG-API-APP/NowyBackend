@@ -233,7 +233,9 @@ const endings = [
   ['cznego', 'czną'],
   ['any', 'ana'],
   ['łabys', 'łbyś'],
-  ['labys', 'lbys']
+  ['labys', 'lbys'],
+  ['wa', 'wy'],
+  ['wym', 'wą']
 ]
 
 const wordToChangeRz = [
