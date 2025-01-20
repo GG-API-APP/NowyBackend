@@ -227,9 +227,12 @@ const endings = [
   ['ał', 'ała'],
   ['al', 'ala'],
   ['łbym', 'łabym'],
+  ['lbym', 'labym'],
   ['czny', 'czna'],
   ['cznego', 'czną'],
-  ['any', 'ana']
+  ['any', 'ana'],
+  ['łabys', 'łbyś'],
+  ['labys', 'lbys']
 ]
 
 const wordToChangeRz = [
@@ -799,7 +802,9 @@ const wordToChangePrz = [
   ['starszym', 'starszą'],
   ['starszym', 'starszej'],
   ['starszy', 'starsza'],
+  ['starsi', 'starsze'],
   ['młodszy', 'młodsza'],
+  ['młodsi', 'młodsze'],
   ['młodszego', 'młodszej'],
   ['młodszemu', 'młodszej'],
   ['młodszego', 'młodszą'],
@@ -867,12 +872,12 @@ const wordToChangeCz = [
   ['possę', 'poliżę'],
   ['posśiesz', 'poliziesz'],
   ['possie', 'polizie'],
-  ['possiałbym', 'polizałbym'],
-  ['possiałabym', 'polizałabym'],
-  ['possiałbyś', 'polizałbyś'],
-  ['possiałabyś', 'polizałabyś'],
-  ['possiałby', 'polizałby'],
-  ['possiałaby', 'polizałaby'],
+  ['possałbym', 'polizałbym'],
+  ['possałabym', 'polizałabym'],
+  ['possałbyś', 'polizałbyś'],
+  ['possałabyś', 'polizałabyś'],
+  ['possałby', 'polizałby'],
+  ['possałaby', 'polizałaby'],
   ['zwal', 'zmasuj'],
   ['zwalić', 'zmasować'],
   ['zwalę', 'zmasuję'],
