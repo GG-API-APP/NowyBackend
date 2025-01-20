@@ -210,6 +210,8 @@ const malesNames = [
 ]
 
 const endings = [
+  ['lił', 'liła'],
+  ['lil', 'lila'],
   ['łem', 'łam'],
   ['lem', 'lam'],
   ['łeś', 'łaś'],
