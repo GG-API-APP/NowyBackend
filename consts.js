@@ -215,6 +215,7 @@ const endings = [
   ['łeś', 'łaś'],
   ['leś', 'laś'],
   ['łes', 'łas'],
+  ['les', 'las'],
   ['ny', 'na'],
   ['ęty', 'ęta'],
   ['ety', 'eta'],
