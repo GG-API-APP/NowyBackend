@@ -904,26 +904,26 @@ const wordToChangeOthers = [
 ]
 
 const uploadedPhotos = [
-  'https://www.gg.pl/dysk/RyQ2HQpE0kpcRiQ2HQpMLMQ/20240521_113234.jpg',
-  'https://www.gg.pl/dysk/qs54GCjsRUtcq854GCjku8U/20240710_133327.jpg',
-  'https://www.gg.pl/dysk/In46W0WCXrtcI346W0WKoDU/20240710_164334.jpg',
-  'https://www.gg.pl/dysk/IJRGW0jZMLRcIZRGW0jRzjo/20240727_165311.jpg',
-  'https://www.gg.pl/dysk/nOgyi-mYpkpcnegyi-mQWMQ/20240727_1422141.jpg',
-  'https://www.gg.pl/dysk/jklYMhlZEohcj0lYMhlR7AY/20240813_182356.jpg',
-  'https://www.gg.pl/dysk/-E6SrKq_fxdc-U6SrKq3gZk/20240816_132154.jpg',
-  'https://www.gg.pl/dysk/Iar_kkLxpSxcIKr_kkL5W6I/20240816_132230.jpg',
-  'https://www.gg.pl/dysk/kmrZikgi8Spck2rZikgqD6Q/20240817_125837.jpg',
-  'https://www.gg.pl/dysk/Np09QkFftUFcN509QkFXS88/20240817_162121.jpg',
-  'https://www.gg.pl/dysk/OCkndlBhZpVcOSkndlBpmBs/20240817_162653.jpg',
-  'https://www.gg.pl/dysk/SWDROkvXSg9cSGDROkvftIE/20240819_115635.jpg',
-  'https://www.gg.pl/dysk/KTpHXWZh5oBcKDpHXWZpGA4/20240822_154323.jpg',
-  'https://www.gg.pl/dysk/znOGofGfiRBcz3OGofGXd54/20240903_152143.jpg',
-  'https://www.gg.pl/dysk/fQuWdf0H68pcfAuWdf0PFUQ/20241013_172310.jpg',
-  'https://www.gg.pl/dysk/Ctxf1EqJY6dcC9xf1EqBnSk/20241016_185643.jpg',
-  'https://www.gg.pl/dysk/oFGHl5CbZP1coVGHl5CTmnM/20241123_204454.jpg',
-  'https://www.gg.pl/dysk/kxv66Z0eYyZckhv66Z0Wnag/20241126_152347.jpg',
-  'https://www.gg.pl/dysk/MtaUhQEQ3EpcM9aUhQEYIsQ/20241217_212632.jpg',
-  'https://www.gg.pl/dysk/XNUjt10Ycw9cXdUjt10QjYE/20241224_173410.jpg'
+  'https://www.gg.pl/dysk/scpaMWAGnJ8QsMpaMWAPMXQ/20220521_113234.jpg',
+  'https://www.gg.pl/dysk/0wIr8On73u0Q0gIr8OnycwY/20220710_133327.jpg',
+  'https://www.gg.pl/dysk/j2myXTmNJ2MQjmmyXTmEiog/20220710_164334.jpg',
+  'https://www.gg.pl/dysk/p2Lk0OqpMBAQpmLk0Oqgnfs/20220727_165311.jpg',
+  'https://www.gg.pl/dysk/H9ejBXbsHcIQHtejBXblsCk/20220727_1422141.jpg',
+  'https://www.gg.pl/dysk/MisRMdo6F6gQMysRMdozukM/20220813_182356.jpg',
+  'https://www.gg.pl/dysk/2thJamMH7cgQ29hJamMOQCM/20220816_132154.jpg',
+  'https://www.gg.pl/dysk/UkPX7G9SkPUQU0PX7G9bPR4/20220816_132230.jpg',
+  'https://www.gg.pl/dysk/igyyfrzevioQiwyyfrzXE8E/20220817_125837.jpg',
+  'https://www.gg.pl/dysk/0rD0eTdfMpMQ07D0eTdWn3g/20220817_162121.jpg',
+  'https://www.gg.pl/dysk/mhdF2FX_z0UQmxdF2FX2Yq4/20220817_162653.jpg',
+  'https://www.gg.pl/dysk/p-qyOpqO0UQQpuqyOpqHfK8/20220819_115635.jpg',
+  'https://www.gg.pl/dysk/mvPANCDRXVkQm_PANCDY8LI/20220822_154323.jpg',
+  'https://www.gg.pl/dysk/xGZNBxJ33-AQxWZNBxJ-cgs/20220903_152143.jpg',
+  'https://www.gg.pl/dysk/offb6fOrHHwQoPfb6fOisZc/20221013_172310.jpg',
+  'https://www.gg.pl/dysk/WRRW1MjL8QIQWBRW1MjCXOk/20221016_185643.jpg',
+  'https://www.gg.pl/dysk/v35VbMJXpiAQvn5VbMJeC8s/20221123_204454.jpg',
+  'https://www.gg.pl/dysk/UWuVbpaYD28QUGuVbpaRooQ/20221126_152347.jpg',
+  'https://www.gg.pl/dysk/PmmF-FhNu7UQP2mF-FhEFl4/20221217_212632.jpg',
+  'https://www.gg.pl/dysk/j9E5_4mypugQjtE5_4m7CwM/20221224_173410.jpg'
 ]
 
 const find = [
