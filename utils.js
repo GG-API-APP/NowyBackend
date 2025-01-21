@@ -185,11 +185,12 @@ const normalizeWord = (word) => {
 }
 
 const validateWord = (word) => {
-  const normalizedMaleNames = malesNames.map((name) => normalizeWord(name))
+  const normalizedWord = normalizeWord(word.toLowerCase())
+  const normalizedMaleNames = malesNames.map(normalizeWord)
 
   if (
-    malesNames.includes(word.toLowerCase()) ||
-    normalizedMaleNames.includes(word.toLowerCase())
+    malesNames.includes(normalizedWord) ||
+    normalizedMaleNames.includes(normalizedWord)
   ) {
     return 'Ania'
   }
@@ -200,72 +201,50 @@ const validateWord = (word) => {
     ...wordToChangeCz,
     ...wordToChangeOthers
   ]
-  const normalizedConnectedWords = connectedWords.map((wordArr) => {
-    return [normalizeWord(wordArr[0]), normalizeWord(wordArr[1])]
-  })
+  const normalizedConnectedWords = connectedWords.map(([w1, w2]) => [
+    normalizeWord(w1),
+    normalizeWord(w2)
+  ])
 
-  if (connectedWords.some((el) => el.includes(word))) {
-    const firstIndex = connectedWords.findIndex((el) => el.includes(word))
-    const secondIndex = connectedWords[firstIndex].findIndex(
-      (el) => el !== word
+  const findReplacement = (list, targetWord) => {
+    const index = list.findIndex(
+      ([w1, w2]) => w1 === targetWord || w2 === targetWord
     )
-    return connectedWords[firstIndex][secondIndex]
+    if (index !== -1) {
+      const [w1, w2] = list[index]
+      return w1 === targetWord ? w2 : w1
+    }
+    return null
   }
 
-  if (normalizedConnectedWords.some((el) => el.includes(normalizeWord(word)))) {
-    const firstIndex = normalizedConnectedWords.findIndex((el) =>
-      el.includes(normalizeWord(word))
-    )
-    const secondIndex = normalizedConnectedWords[firstIndex].findIndex(
-      (el) => el !== normalizeWord(word)
-    )
-    return normalizedConnectedWords[firstIndex][secondIndex]
+  const replacement =
+    findReplacement(connectedWords, word) ||
+    findReplacement(normalizedConnectedWords, normalizedWord)
+  if (replacement) {
+    return replacement
   }
 
-  const lastTwoLetters = word.slice(word.length - 2)
-  const lastThreeLetters = word.slice(word.length - 3)
-
-  if (endings.some((el) => el.includes(lastTwoLetters)) && word.length > 2) {
-    const firstIndex = endings.findIndex((el) => el.includes(lastTwoLetters))
-    const secondIndex = endings[firstIndex].findIndex(
-      (el) => el !== lastTwoLetters
-    )
-    return `${word.slice(0, -2)}${endings[firstIndex][secondIndex]}`
+  const getReplacementByEnding = (word, endingList) => {
+    for (let length = 2; length <= 6; length++) {
+      const ending = word.slice(-length)
+      if (
+        word.length > length &&
+        endingList.some((el) => el.includes(ending))
+      ) {
+        const [original, replacement] = endingList.find((el) =>
+          el.includes(ending)
+        )
+        return (
+          word.slice(0, -length) +
+          (original === ending ? replacement : original)
+        )
+      }
+    }
+    return null
   }
 
-  if (endings.some((el) => el.includes(lastThreeLetters)) && word.length > 3) {
-    const firstIndex = endings.findIndex((el) => el.includes(lastThreeLetters))
-    const secondIndex = endings[firstIndex].findIndex(
-      (el) => el !== lastThreeLetters
-    )
-    return `${word.slice(0, -3)}${endings[firstIndex][secondIndex]}`
-  }
-
-  if (endings.some((el) => el.includes(lastThreeLetters)) && word.length > 4) {
-    const firstIndex = endings.findIndex((el) => el.includes(lastThreeLetters))
-    const secondIndex = endings[firstIndex].findIndex(
-      (el) => el !== lastThreeLetters
-    )
-    return `${word.slice(0, -4)}${endings[firstIndex][secondIndex]}`
-  }
-
-  if (endings.some((el) => el.includes(lastThreeLetters)) && word.length > 5) {
-    const firstIndex = endings.findIndex((el) => el.includes(lastThreeLetters))
-    const secondIndex = endings[firstIndex].findIndex(
-      (el) => el !== lastThreeLetters
-    )
-    return `${word.slice(0, -5)}${endings[firstIndex][secondIndex]}`
-  }
-
-  if (endings.some((el) => el.includes(lastThreeLetters)) && word.length > 6) {
-    const firstIndex = endings.findIndex((el) => el.includes(lastThreeLetters))
-    const secondIndex = endings[firstIndex].findIndex(
-      (el) => el !== lastThreeLetters
-    )
-    return `${word.slice(0, -6)}${endings[firstIndex][secondIndex]}`
-  }
-
-  return word
+  const endingReplacement = getReplacementByEnding(word, endings)
+  return endingReplacement || word
 }
 
 const validateMessage = (message) => {

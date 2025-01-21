@@ -4,7 +4,8 @@ const {
   getInitialSenderPair,
   getToken,
   sendMessage,
-  setStatus
+  setStatus,
+  validateMessage
 } = require('./utils')
 const cors = require('cors')
 const { Message, Pair } = require('./models')
@@ -60,24 +61,24 @@ app.get(`/${process.env.BOTGG_ID}.html`, (req, res) => {
 app.post('/', async (req, res) => {
   const initialSender = req.query.from // Parametr z URL
   const originalMessage = req.body
-  // const message = validateMessage(originalMessage)
+  const message = validateMessage(originalMessage)
 
-  const oldValidateMessage = (orgMessage) => {
-    const imageUrlPattern = /\.(jpeg|jpg|png|gif|bmp|webp|tiff|svg)$/i
-    const videoUrlPattern = /\.(mp4|mkv|avi|mov|wmv|flv|webm)$/i
+  // const oldValidateMessage = (orgMessage) => {
+  //   const imageUrlPattern = /\.(jpeg|jpg|png|gif|bmp|webp|tiff|svg)$/i
+  //   const videoUrlPattern = /\.(mp4|mkv|avi|mov|wmv|flv|webm)$/i
 
-    if (imageUrlPattern.test(orgMessage)) {
-      const randomIndex = Math.floor(Math.random() * uploadedPhotos.length)
-      return uploadedPhotos[randomIndex]
-    }
+  //   if (imageUrlPattern.test(orgMessage)) {
+  //     const randomIndex = Math.floor(Math.random() * uploadedPhotos.length)
+  //     return uploadedPhotos[randomIndex]
+  //   }
 
-    if (videoUrlPattern.test(orgMessage)) {
-      return 'Nasz system podejrzewa, że nieznajomy chce Ci przesłać niecenzuralne zdjęcie. Jeżeli godzisz się na otrzymywanie takich treści, to dodaj go do listy swoich kontaktów i poproś o ponowne przesłanie tego pliku.'
-    }
-    return replaceOnce(orgMessage.toLowerCase(), find, replace)
-  }
+  //   if (videoUrlPattern.test(orgMessage)) {
+  //     return 'Nasz system podejrzewa, że nieznajomy chce Ci przesłać niecenzuralne zdjęcie. Jeżeli godzisz się na otrzymywanie takich treści, to dodaj go do listy swoich kontaktów i poproś o ponowne przesłanie tego pliku.'
+  //   }
+  //   return replaceOnce(orgMessage.toLowerCase(), find, replace)
+  // }
 
-  const message = oldValidateMessage(originalMessage)
+  // const message = oldValidateMessage(originalMessage)
 
   const initialSenderPairNumber = await getInitialSenderPair(
     initialSender,
