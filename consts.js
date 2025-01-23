@@ -553,6 +553,7 @@ const wordToChangeRz = [
   ['koleżanki', 'kolegi'],
   ['koleżance', 'koledze'],
   ['koleżanko', 'kolego'],
+  ['koleżankę', 'kolegę'],
   ['koledze', 'kolega'],
   ['ania', 'koleżka'],
   ['anią', 'koleżką'],
@@ -901,7 +902,9 @@ const wordToChangeOthers = [
   ['zajdziesz', 'zostaniesz'],
   ['tą', 'tym'],
   ['stoi', 'mokra'],
-  ['nim', 'niej']
+  ['nim', 'niej'],
+  ['taką', 'takiego'],
+  ['taka', 'taki']
 ]
 
 const uploadedPhotos = [
