@@ -226,6 +226,7 @@ const endings = [
   ['dy', 'da'],
   ['szy', 'sza'],
   ['ał', 'ała'],
+  ['ła', 'ły'],
   ['al', 'ala'],
   ['łbym', 'łabym'],
   ['czny', 'czna'],
