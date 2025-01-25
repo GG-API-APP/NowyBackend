@@ -907,7 +907,9 @@ const wordToChangeOthers = [
   ['stoi', 'mokra'],
   ['nim', 'niej'],
   ['taką', 'takiego'],
-  ['taka', 'taki']
+  ['taka', 'taki'],
+  ['który', 'która'],
+  ['którego', 'którą']
 ]
 
 const uploadedPhotos = [
