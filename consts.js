@@ -913,7 +913,8 @@ const wordToChangeOthers = [
   ['taka', 'taki'],
   ['który', 'która'],
   ['którego', 'którą'],
-  ['prawdziwe', 'prawdziwi']
+  ['prawdziwe', 'prawdziwi'],
+  ['pan', 'pani']
 ]
 
 const uploadedPhotos = [
