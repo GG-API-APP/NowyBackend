@@ -273,6 +273,7 @@ const wordToChangeRz = [
   ['jajcu', 'cyckowi'],
   ['jajcach', 'cyckach'],
   ['pierś', 'jądro'],
+  ['piersiami', 'jądrami'],
   ['piersi', 'jądra'],
   ['piersi', 'jądra'],
   ['piersi', 'jądrze'],
