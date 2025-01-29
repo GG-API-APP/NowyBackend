@@ -895,7 +895,8 @@ const wordToChangeCz = [
   ['zwaliłabyś', 'zmasowałbyś'],
   ['zwaliłbyś', 'zmasowałabyś'],
   ['zwaliłaby', 'zmasowałby'],
-  ['zwaliłby', 'zmasowałaby']
+  ['zwaliłby', 'zmasowałaby'],
+  ['stanął', 'zwilgotniała']
 ]
 
 const wordToChangeOthers = [
