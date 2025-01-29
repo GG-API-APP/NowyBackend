@@ -381,6 +381,7 @@ const wordToChangeRz = [
   ['singlu', 'singielce'],
   ['singlu', 'singielko'],
   ['mężczyzna', 'kobieta'],
+  ['mężczyzn', 'kobiet'],
   ['mężczyźni', 'kobiety'],
   ['mężczyzn', 'kobiety'],
   ['mężczyzny', 'kobiety'],
