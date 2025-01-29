@@ -841,7 +841,11 @@ const wordToChangePrz = [
   ['słodkiego', 'słodką'],
   ['słodkim', 'słodką'],
   ['słodkim', 'słodkiej'],
-  ['słodki', 'słodka']
+  ['słodki', 'słodka'],
+  ['zajebisty', 'zajebista'],
+  ['zajebistego', 'zajebistej'],
+  ['zajebistemu', 'zajebistej'],
+  ['zajebistym', 'zajebistą']
 ]
 
 const wordToChangeCz = [
