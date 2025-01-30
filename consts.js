@@ -752,6 +752,9 @@ const wordToChangePrz = [
   ['nagim', 'nagą'],
   ['nagim', 'nagiej'],
   ['nagi', 'naga'],
+  ['prawdziwy', 'prawdziwa'],
+  ['prawdziwi', 'prawdziwe'],
+  ['prawdziwego', 'prawdziwej'],
   ['piękny', 'piękna'],
   ['pięknego', 'pięknej'],
   ['pięknemu', 'pięknej'],
@@ -919,7 +922,6 @@ const wordToChangeOthers = [
   ['taka', 'taki'],
   ['który', 'która'],
   ['którego', 'którą'],
-  ['prawdziwe', 'prawdziwi'],
   ['pan', 'pani']
 ]
 
