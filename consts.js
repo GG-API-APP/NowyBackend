@@ -755,6 +755,7 @@ const wordToChangePrz = [
   ['prawdziwy', 'prawdziwa'],
   ['prawdziwi', 'prawdziwe'],
   ['prawdziwego', 'prawdziwej'],
+  ['prawdziwym', 'prawdziwą'],
   ['piękny', 'piękna'],
   ['pięknego', 'pięknej'],
   ['pięknemu', 'pięknej'],
