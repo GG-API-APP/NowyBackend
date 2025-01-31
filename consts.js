@@ -918,12 +918,14 @@ const wordToChangeOthers = [
   ['zajdziesz', 'zostaniesz'],
   ['tą', 'tym'],
   ['stoi', 'mokra'],
+  ['stanąć', 'zwilgotnieć'],
   ['nim', 'niej'],
   ['taką', 'takiego'],
   ['taka', 'taki'],
   ['który', 'która'],
   ['którego', 'którą'],
-  ['pan', 'pani']
+  ['pan', 'pani'],
+  ['jej', 'jego']
 ]
 
 const uploadedPhotos = [
