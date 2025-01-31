@@ -925,7 +925,8 @@ const wordToChangeOthers = [
   ['który', 'która'],
   ['którego', 'którą'],
   ['pan', 'pani'],
-  ['jej', 'jego']
+  ['jej', 'jego'],
+  ['go', 'ją']
 ]
 
 const uploadedPhotos = [
