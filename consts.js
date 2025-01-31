@@ -927,7 +927,9 @@ const wordToChangeOthers = [
   ['pan', 'pani'],
   ['jej', 'jego'],
   ['go', 'ją'],
-  ['postawić', 'nawilżyć']
+  ['postawić', 'nawilżyć'],
+  ['obciągać', 'lizać'],
+  ['obciągając', 'liżąc']
 ]
 
 const uploadedPhotos = [
