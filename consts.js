@@ -238,6 +238,9 @@ const endings = [
 ]
 
 const wordToChangeRz = [
+  ['siur', 'pipa'],
+  ['siura', 'pipe'],
+  ['siurem', 'pipą'],
   ['koleś', 'kolesiówa'],
   ['kolesia', 'kolesiówę'],
   ['ukrainka', 'polak'],
