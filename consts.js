@@ -234,7 +234,9 @@ const endings = [
   ['czny', 'czna'],
   ['cznego', 'czną'],
   ['any', 'ana'],
-  ['iwy', 'iwa']
+  ['iwy', 'iwa'],
+  ['ry', 'ra'],
+  ['czy', 'cza']
 ]
 
 const wordToChangeRz = [
