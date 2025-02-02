@@ -938,7 +938,9 @@ const wordToChangeOthers = [
   ['obciągając', 'liżąc'],
   ['spuszczać', 'wypuszczać soki'],
   ['spuścić', 'wypuścić soki'],
-  ['staje', 'wilgotnieje']
+  ['staje', 'wilgotnieje'],
+  ['całego', 'całą'],
+  ['cały', 'cała']
 ]
 
 const uploadedPhotos = [
