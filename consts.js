@@ -237,7 +237,8 @@ const endings = [
   ['iwy', 'iwa'],
   ['ry', 'ra'],
   ['czy', 'cza'],
-  ['wym', 'wą']
+  ['wym', 'wą'],
+  ['ego', 'ej']
 ]
 
 const wordToChangeRz = [
