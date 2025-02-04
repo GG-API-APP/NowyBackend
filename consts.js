@@ -240,6 +240,18 @@ const endings = [
 ]
 
 const wordToChangeRz = [
+  ['moszna', 'sutek'],
+  ['moszny', 'sutka'],
+  ['mosznie', 'sutkowi'],
+  ['mosznę', 'sutek'],
+  ['moszną', 'sutkiem'],
+  ['mosznie', 'sutku'],
+  ['moszna', 'sutki'],
+  ['moszny', 'sutków'],
+  ['mosznie', 'sutkom'],
+  ['mosznę', 'sutki'],
+  ['moszną', 'sutkami'],
+  ['mosznie', 'sutkach'],
   ['siur', 'pipa'],
   ['siura', 'pipe'],
   ['siurem', 'pipą'],
