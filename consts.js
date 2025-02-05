@@ -209,6 +209,8 @@ const malesNames = [
   'ireneusz'
 ]
 
+export const wordsToSkip = ['ja', 'hej']
+
 const endings = [
   ['iła', 'ił'],
   ['łem', 'łam'],
@@ -239,7 +241,8 @@ const endings = [
   ['czy', 'cza'],
   ['wym', 'wą'],
   ['ego', 'ej'],
-  ['wa', 'wy']
+  ['wa', 'wy'],
+  ['ją', 'go']
 ]
 
 const wordToChangeRz = [
