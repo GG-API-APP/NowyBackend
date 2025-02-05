@@ -209,7 +209,7 @@ const malesNames = [
   'ireneusz'
 ]
 
-export const wordsToSkip = ['ja', 'hej']
+export const wordsToSkip = ['ja', 'hej', 'nigdy']
 
 const endings = [
   ['iła', 'ił'],
@@ -705,13 +705,11 @@ const wordToChangePrz = [
   ['żonatym', 'zamężną'],
   ['żonatym', 'zamężnej'],
   ['żonaty', 'zamężna'],
-  ['twardy', 'mokry'],
+  ['twardy', 'mokra'],
   ['twardego', 'mokrej'],
   ['twardemu', 'mokrej'],
   ['twardego', 'mokrą'],
   ['twardym', 'mokrą'],
-  ['twardym', 'mokrej'],
-  ['twardy', 'mokry'],
   ['męski', 'kobiecy'],
   ['męskie', 'kobiece'],
   ['męskiego', 'kobiecego'],
