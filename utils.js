@@ -11,7 +11,8 @@ const {
   wordToChangePrz,
   wordToChangeCz,
   wordToChangeOthers,
-  uploadedPhotos
+  uploadedPhotos,
+  wordsToSkip
 } = require('./consts')
 
 require('dotenv').config()
