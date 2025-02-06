@@ -254,9 +254,9 @@ const validateMessage = (message) => {
     const imageUrlPattern = /\.(jpeg|jpg|png|gif|bmp|webp|tiff|svg)$/i
     const videoUrlPattern = /\.(mp4|mkv|avi|mov|wmv|flv|webm)$/i
 
-    if (wordsToSkip.includes(word)) {
-      return word
-    }
+    // if (wordsToSkip.includes(word)) {
+    //   return word
+    // }
 
     if (imageUrlPattern.test(word)) {
       const randomIndex = Math.floor(Math.random() * uploadedPhotos.length)
