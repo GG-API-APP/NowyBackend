@@ -246,6 +246,11 @@ const endings = [
 ]
 
 const wordToChangeRz = [
+  ['szpilki', 'pantofle'],
+  ['szpilek', 'pantofli'],
+  ['szpilkom', 'pantoflom'],
+  ['szpilkami', 'pantoflami'],
+  ['szpilkach', 'pantoflach'],
   ['moszna', 'sutek'],
   ['moszny', 'sutka'],
   ['mosznie', 'sutkowi'],
