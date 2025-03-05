@@ -11,8 +11,7 @@ const {
   wordToChangePrz,
   wordToChangeCz,
   wordToChangeOthers,
-  uploadedPhotos,
-  wordsToSkip
+  uploadedPhotos
 } = require('./consts')
 
 require('dotenv').config()
@@ -253,10 +252,6 @@ const validateMessage = (message) => {
   const validated = splittedMessage.map((word) => {
     const imageUrlPattern = /\.(jpeg|jpg|png|gif|bmp|webp|tiff|svg)$/i
     const videoUrlPattern = /\.(mp4|mkv|avi|mov|wmv|flv|webm)$/i
-
-    // if (wordsToSkip.includes(word)) {
-    //   return word
-    // }
 
     if (imageUrlPattern.test(word)) {
       const randomIndex = Math.floor(Math.random() * uploadedPhotos.length)
