@@ -106,6 +106,7 @@ const parseXML = async (xml) => {
 
 const getToken = async () => {
   const url = `https://botapi.gadu-gadu.pl/botmaster/getToken/${process.env.BOTGG_NUMBER}`
+
   const username = process.env.BOTGG_AUTH_USERNAME
   const password = process.env.BOTGG_AUTH_PASSWORD
 
